@@ -1,0 +1,43 @@
+.CheatSheetSection
+    border-bottom 1px solid alpha(#000, 0.2)
+    margin-bottom 25px
+    padding-bottom 25px
+
+    &__Title
+        @extends .Bold
+        font-size 30px
+        margin-bottom 30px
+
+    &__Content
+        cf()
+
+.ColorPalette
+    @extends .Bold
+    column(1/5, cycle: 5)
+    border-radius 5px
+    display none
+    line-height 50px
+    margin-bottom 5px
+    overflow ellipsis
+    text-align center
+
+$colorNum = 1
+for $color in $palette
+    for $accent in $palette[$color]
+        $colorName = $color + ' ' + $accent
+        $colorCode = palette($color, $accent)
+        $textColor = luminosity($colorCode) > 0.3 ? #444 : #ccc
+
+        .ColorPalette:nth-child({$colorNum})
+            &:before
+                content $colorName
+                display block
+            background $colorCode
+            color $textColor
+            display block
+
+        $colorNum = $colorNum + 1
+
+.DropDownList
+    .UI_DropDown
+        column(1/5, cycle: 5)

@@ -1,0 +1,28 @@
+.UI_Accordion
+    margin -10px
+
+    &__Header
+        @extends .Bold
+        color $invertedFontColor
+        height 33px
+        padding 10px
+
+    &__Content
+        display none
+
+    &--Opened
+        .UI_Accordion__Content
+            display block
+
+    .UI_List__Item
+        border-top 1px solid alpha(#FFF, 0.1)
+        border-bottom none
+        padding 10px 10px 10px 60px
+        a
+            color alpha(#FFF, 0.7)
+            display block
+            font-weight normal
+        &:hover
+            background-color alpha(#e3e8ec, 12%)
+            > a
+                color black

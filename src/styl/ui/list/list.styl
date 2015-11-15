@@ -1,0 +1,21 @@
+.UI_List
+
+    &--Simple
+        & > .UI_List__Item
+            @extends .simpleItem
+
+    &--Alternated
+        & > .UI_List__Item
+            @extends .alternatedItem
+
+    &__Item
+        line-height 13px
+        padding 10px
+        overflow ellipsis
+
+    &__Link
+        @extends .Bold
+        display inline-block
+        height 100%
+
+

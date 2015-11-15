@@ -1,0 +1,44 @@
+.UI_Switch
+    user-select none
+    white-space nowrap
+
+    &__Label, &__Switcher
+        vertical-align middle
+
+    &__Label
+        line-height $switchHeight
+        overflow ellipsis
+
+    &__Switcher
+        size($switchWidth, $switchHeight)
+        background alpha(#000, 0.3)
+        border-radius $switchRadius
+        box-shadow inset 0 0 5px alpha(#000, 0.4), 0 1px 1px alpha(#FFF, 0.2)
+        cursor pointer
+        display inline-block
+        margin 0 15px
+        position relative
+
+        &:before, &:after
+            absolute left 0 top 50%
+            border-radius 100%
+            content ''
+            transition all 0.2s easeInOutExpo
+
+        &:before
+            size($switcherSize, $switcherSize)
+            background linear-gradient('top', #FFF, palette('Grey', 'a200'))
+            box-shadow 0 0 4px alpha(#000, 0.4)
+            margin $switcherOffsetTop 0 0 $switcherOffsetLeft
+
+        &:after
+            size($switcherInnerSize, $switcherInnerSize)
+            background linear-gradient('top', palette('Grey', 'a200'), #FFF)
+            box-shadow 0 0 0 2px alpha(#FFF, 0.5)
+            margin $switcherInnerOffsetTop 0 0 $switcherInnerOffsetLeft
+
+    input
+        display none
+        &:checked + label
+            &:before, &:after
+                transform translateX(40px)

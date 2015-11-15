@@ -1,0 +1,36 @@
+.Icon
+    display inline-block
+    fill $iconColor
+    vertical-align middle
+    icon(18px, 100%)
+
+    // Name
+
+    &--SelectArrows
+        icon(7px, 100%)
+
+    &--Star, &--DropDown
+        icon(30px, 100%)
+        fill #000
+
+    // Color
+
+    &--InvertedColor
+        fill $iconInvertedColor
+
+    &--Disabled
+        opacity 0.2
+
+    // Position
+
+    &--Right, &--FloatRight
+        margin-left 10px
+
+    &--Left, &--FloatLeft
+        margin-right 10px
+
+    &--FloatRight
+        float right
+
+    &--FloatLeft
+        float left

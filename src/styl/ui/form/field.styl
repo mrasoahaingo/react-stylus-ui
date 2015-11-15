@@ -1,0 +1,106 @@
+.UI_FieldRow
+    cf()
+    border none
+    padding 0
+
+    & > *
+        margin-bottom 20px
+
+    &--Columned > *
+        column(1/4, gutter: 1.5)
+
+    &--Grouped >  *
+        display inline-block
+        vertical-align middle
+
+    &--AlignLeft
+        text-align left
+        & > *:not(:first-child)
+            margin-left 30px
+
+    &--AlignRight
+        text-align right
+        & > *:not(:last-child)
+            margin-right 30px
+
+.UI_Field
+
+    &__Label
+        @extends .Bold
+        cursor pointer
+        overflow ellipsis
+        position relative
+        user-select none
+        &, & + .UI_Field__Field, & + .UI_Field, & + .UI_DropDown
+            display block
+            margin-top 10px
+            vertical-align middle
+            width 100%
+        &
+            margin-top 0
+
+    &__Field
+        @extends .inputFieldDark
+
+    &--Radio, &--Checkbox
+        .UI_Field__Field
+            display none
+
+        .UI_Field__Label
+            padding-left 32px
+            line-height $inputFieldHeight
+            text-align left
+            &:before, &:after
+                absolute left 2px top 50%
+                border-radius 100%
+                box-shadow 0 0 2px alpha(#000, 0.8)
+                content ''
+                margin-top -12.5px
+            &:after
+                transition all 0.2s easeOutBack
+                transform scale(0)
+
+    &--Radio
+        .UI_Field__Label
+            &:before, &:after
+                size($checkInnerSize, $checkInnerSize)
+                background palette('Grey', 'a100')
+                border $checkBorderSize solid #FFF
+        .UI_Field__Field
+            &:checked + .UI_Field__Label:after
+                background linear-gradient('top', lighten($uiPrimaryColor, 10%), $uiPrimaryColor)
+                transform scale(1)
+
+    &--Checkbox
+        .UI_Field__Label
+            &:before, &:after
+                size($checkSize, $checkSize)
+        .UI_Field__Field
+            &:checked + .UI_Field__Label:after
+                background $uiPrimaryColor url('../icons/check.svg') 50% 50% no-repeat
+                transform scale(1)
+
+    &--Inline
+        white-space nowrap
+
+        .UI_Field__Label
+            &
+                margin-right 10px
+            &, & + input, & + select, & + .UI_Field, & + .UI_DropDown
+                display inline-block
+                min-width 100px
+                margin-top 0
+                width auto
+
+
+    // Theme
+
+    &--Light
+        color $invertedFontColor
+
+        .UI_Field__Field
+            @extends .inputFieldLight
+
+        &.UI_Field--Radio, &.UI_Field--Checkbox
+            .UI_Field__Label:before
+                box-shadow 0 0 1px alpha(#FFF, 0.7)

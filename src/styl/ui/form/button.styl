@@ -1,0 +1,28 @@
+.UI_Button
+    @extends .SuperBold
+    background none
+    border none
+    font-size $fontSizeS5
+    text-transform uppercase
+    vertical-align middle
+
+    &__Label
+        vertical-align middle
+
+    // Variation colors
+
+    &--Primary
+        buttonVariant('primary', $uiButtonPrimaryFontColor, $uiButtonPrimaryBgColor)
+    &--Secondary
+        buttonVariant('secondary', $uiButtonSecondaryFontColor, $uiButtonSecondaryBgColor)
+    &--Disabled, &:disabled
+        buttonVariant('disabled', $uiButtonDisabledFontColor, $uiButtonDisabledBgColor)
+
+    // Sizes
+
+    &, &--Normal
+        buttonSize(10px, 30px, 4px)
+    &--Large
+        buttonSize(13px, 35px, 5px)
+    &--Small
+        buttonSize(7px, 25px, 3px)

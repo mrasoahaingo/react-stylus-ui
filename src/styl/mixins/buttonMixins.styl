@@ -1,0 +1,14 @@
+buttonVariant($type, $fontColor, $backgroundColor)
+    color $fontColor
+    background linear-gradient('top', lighten($backgroundColor, 10%), $backgroundColor)
+    &:hover {
+        background-image none
+        background-color $backgroundColor
+    }
+    if $type != 'disabled'
+        box-shadow 0 0 2px alpha(#000, 0.1)
+
+buttonSize($spacinWidth, $buttonHeight, $borderRadius)
+    border-radius $borderRadius
+    padding 0 $spacinWidth
+    height $buttonHeight

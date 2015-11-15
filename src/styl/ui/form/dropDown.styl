@@ -1,0 +1,33 @@
+.UI_DropDown
+    position relative
+
+    &__Label
+        display block
+        overflow ellipsis
+        position relative
+        z-index 2
+
+    &__Content
+        absolute left 0 top 100% right 0
+        border-radius 0 0 4px 4px
+        font-size $fontSizeS5
+        height 0
+        min-width 230px
+        overflow hidden
+        z-index 1
+
+        & > :first-child
+            transform translateY(-100%)
+            transition all .2s easeInOutExpo
+
+    &__Icon
+        fill palette('Blue')
+
+    &--Opened
+        & > :last-child
+            height auto
+            z-index 3
+            & > :first-child
+                transform translateY(0)
+        & >:first-child
+            border-radius 5px 5px 0 0
