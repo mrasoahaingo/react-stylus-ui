@@ -1,11 +1,9 @@
 
-React Stylus Boilerplate
+React Stylus UI
 =====================
 
-This is a simple React project boilerplate based on:
-
-* [React Transform Boilerplate](https://github.com/gaearon/react-transform-boilerplate)
-* And [Stylus](https://learnboost.github.io/stylus/) integration
+A good way to learn how React works and how to think "component" when building this UI :)
+I was very surprise how building apps with React lead me to use composition with ZERO inheritance.
 
 Install dependencies and launch the server
 
