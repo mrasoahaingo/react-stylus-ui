@@ -8,11 +8,12 @@
         z-index 2
 
     &__Content
-        absolute left 0 top 100% right 0
+        absolute left 0 top 100%
         border-radius 0 0 4px 4px
         font-size $fontSizeS5
         height 0
-        min-width 230px
+        min-width 100%
+        max-width 200%
         overflow hidden
         z-index 1
 
@@ -22,6 +23,10 @@
 
     &__Icon
         fill palette('Blue')
+
+    &__LinkLabel
+        display block
+        overflow ellipsis
 
     &--Opened
         & > :last-child
