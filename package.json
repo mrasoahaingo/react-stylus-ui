@@ -1,0 +1,36 @@
+{
+  "name": "react-stylus-ui",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "start": "tarec start",
+    "build": "tarec build",
+    "test": "tarec mochaTest",
+    "test:watch": "tarec mochaTest -- -w",
+    "test:coverage": "tarec mochaTest --coverage",
+    "report": "tarec mochaTestReport -o",
+    "publish": "npm run build && gh-pages -d dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "react": "*",
+    "react-dom": "*",
+    "jeet": "*",
+    "nib": "*",
+    "classnames": "*",
+    "lodash": "*",
+    "react-addons-create-fragment": "*",
+    "core-decorators": "*",
+    "react-click-outside": "*"
+  },
+  "devDependencies": {
+    "gh-pages": "^0.11.0",
+    "tarec": "^1.4.1",
+    "tarec-plugin-mocha-test": "~2.0.0",
+    "tarec-plugin-sass": "~2.0.0",
+    "stylus-loader": "*"
+  }
+}
