@@ -1,21 +1,21 @@
 import React  from 'react'
 import classNames  from 'classNames'
 import { autobind } from 'core-decorators'
-import reactMixin from 'react-mixin'
-import listensToClickOutside from 'react-onclickoutside/decorator';
+import enhanceWithClickOutside from 'react-click-outside';
 
 import { Icon } from '../elements'
 
-@listensToClickOutside()
 class DropDown extends React.Component {
     state = {
         opened: false
     }
+
     handleClickOutside = (event) => {
         this.setState({
             opened: false
         });
     }
+
     @autobind
     handleToggle () {
         this.setState({
@@ -51,4 +51,4 @@ DropDown.defaultProps = {
     iconPos: 'FloatRight'
 }
 
-export default DropDown;
+export default enhanceWithClickOutside(DropDown);

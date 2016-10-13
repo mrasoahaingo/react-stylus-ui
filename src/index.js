@@ -66,4 +66,4 @@ class CheatSheet extends React.Component {
     }
 }
 
-ReactDOM.render(<CheatSheet />, document.getElementById('root'));
+ReactDOM.render(<CheatSheet />, document.getElementById('app'));
